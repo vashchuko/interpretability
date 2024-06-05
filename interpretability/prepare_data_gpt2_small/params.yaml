@@ -1,0 +1,28 @@
+calculate_mean_activation_values:
+  attn_keys_hook_v:
+  - 'blocks.0.attn.hook_v'
+  - 'blocks.1.attn.hook_v'
+  - 'blocks.2.attn.hook_v'
+  - 'blocks.3.attn.hook_v'
+  - 'blocks.4.attn.hook_v'
+  - 'blocks.5.attn.hook_v'
+  - 'blocks.6.attn.hook_v'
+  - 'blocks.7.attn.hook_v'
+  - 'blocks.8.attn.hook_v'
+  - 'blocks.9.attn.hook_v'
+  - 'blocks.10.attn.hook_v'
+  - 'blocks.11.attn.hook_v'
+  prompt_key: 'prompt'
+  template_words:
+  - { 'word': 'The', 'position': [ 0 ] }
+  - { 'word': ' city', 'position': [ 1, 13 ] }
+  - { 'word': ' of', 'position': [ 2, 9, 14, 21 ] }
+  - { 'word': ' is', 'position': [ 4, 16 ] }
+  - { 'word': ' located', 'position': [ 5, 17 ] }
+  - { 'word': ' in', 'position': [ 6, 18 ] }
+  - { 'word': ' the', 'position': [ 7, 19 ] }
+  - { 'word': ' country', 'position': [ 8, 20 ] }
+  - { 'word': '.', 'position': [ 11 ] }
+  - { 'word': ' The', 'position': [ 12 ] }
+  - { 'word': 'city name', 'position': [ 3, 15 ] }
+  - { 'word': 'country name', 'position': [ 10 ] }

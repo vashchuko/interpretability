@@ -1,0 +1,17 @@
+stages:
+  attn_head_activation_patching_on_last_token:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_activation_patching_on_last_token.py ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_21.pkl data\attn_head_activation_patching_on_last_token
+    deps:
+    - ..\\data\\gpt2_small_transfromer_lens.pkl
+    - ..\\data\\examples_v4.json
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_21.pkl
+    - ..\\steps\\factual_recall_gpt2_small\\attn_head_activation_patching_on_last_token.py
+    outs:
+    - data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_logit_diff.pkl
+    - data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_logit_diff.html
+    - data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_first_token_logit.pkl
+    - data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_first_token_logit.html
+    - data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_second_token_logit.pkl
+    - data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_second_token_logit.html
+    params:
+    - attn_head_activation_patching_on_last_token.prompt_key

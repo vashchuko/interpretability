@@ -1,0 +1,5 @@
+outs:
+- md5: f28a560619b953d094f9844bb5e27555
+  size: 26354
+  hash: md5
+  path: abc_examples_v4.json

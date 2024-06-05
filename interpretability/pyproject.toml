@@ -12,6 +12,7 @@ dvc = "3.49.0"
 transformer-lens = "^2.0.0"
 circuitsvis = "^1.43.2"
 plotly = "^5.22.0"
+kaleido = "0.2.1"
 
 
 [build-system]

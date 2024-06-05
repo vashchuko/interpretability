@@ -1,0 +1,61 @@
+schema: '2.0'
+stages:
+  attn_head_activation_patching_on_last_token:
+    cmd: python 
+      ..\\steps\\factual_recall_gpt2_small\\attn_head_activation_patching_on_last_token.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json 
+      ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_21.pkl
+      data\attn_head_activation_patching_on_last_token
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: 3d3673e0d53ad990acf64cb00ceca351
+      size: 666253970
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_21.pkl
+      hash: md5
+      md5: 4db8deb9027df2096d9bbf7f7b79ad3f
+      size: 37683
+    - path: 
+        ..\\steps\\factual_recall_gpt2_small\\attn_head_activation_patching_on_last_token.py
+      hash: md5
+      md5: d2c882c5c77fc98e49699ff55a22626a
+      size: 1795
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+    outs:
+    - path: 
+        data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_first_token_logit.html
+      hash: md5
+      md5: f7fc24a472aabfe1469cd97ac0c2180d
+      size: 3644149
+    - path: 
+        data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_first_token_logit.pkl
+      hash: md5
+      md5: 3db183e400e4d2fd6f2a257a54f58e6d
+      size: 1552
+    - path: 
+        data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_logit_diff.html
+      hash: md5
+      md5: e5d9c21475434ab08a0aac5af4ac6432
+      size: 3643947
+    - path: 
+        data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_logit_diff.pkl
+      hash: md5
+      md5: 7d0dd396e9f82e04a3b358cfa3110d40
+      size: 1552
+    - path: 
+        data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_second_token_logit.html
+      hash: md5
+      md5: 34668db1022be6835bde883271d5f92a
+      size: 3644129
+    - path: 
+        data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_second_token_logit.pkl
+      hash: md5
+      md5: b07db3af9881f189e2b477ddfd7aa045
+      size: 1552

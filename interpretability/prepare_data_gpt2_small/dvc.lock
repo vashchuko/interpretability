@@ -1,0 +1,207 @@
+schema: '2.0'
+stages:
+  prepare_gpt2_small_transformer_lens:
+    cmd: python ..\\steps\\prepare_data_gpt2_small\\prepare_gpt2_small_transformer_lens.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl
+    deps:
+    - path: ..\\steps\\prepare_data_gpt2_small\\prepare_gpt2_small_transformer_lens.py
+      hash: md5
+      md5: 145d2cabd33805f5cc25fc0f3148c68c
+      size: 491
+    outs:
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: 3d3673e0d53ad990acf64cb00ceca351
+      size: 666253970
+  calculate_mean_attn_hook_v_activation_values:
+    cmd: python 
+      ..\\steps\\prepare_data_gpt2_small\\calculate_mean_attn_hook_v_activation_values.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\abc_examples_v4.json ..\data\mean_attn_hook_v_activation_values
+    deps:
+    - path: ..\\data\\abc_examples_v4.json
+      hash: md5
+      md5: f28a560619b953d094f9844bb5e27555
+      size: 26354
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: 3d3673e0d53ad990acf64cb00ceca351
+      size: 666253970
+    - path: 
+        ..\\steps\\prepare_data_gpt2_small\\calculate_mean_attn_hook_v_activation_values.py
+      hash: md5
+      md5: 6cd6427779ce69423a9fd3dc6f85a75a
+      size: 1100
+    params:
+      params.yaml:
+        calculate_mean_activation_values.attn_keys_hook_v:
+        - blocks.0.attn.hook_v
+        - blocks.1.attn.hook_v
+        - blocks.2.attn.hook_v
+        - blocks.3.attn.hook_v
+        - blocks.4.attn.hook_v
+        - blocks.5.attn.hook_v
+        - blocks.6.attn.hook_v
+        - blocks.7.attn.hook_v
+        - blocks.8.attn.hook_v
+        - blocks.9.attn.hook_v
+        - blocks.10.attn.hook_v
+        - blocks.11.attn.hook_v
+        calculate_mean_activation_values.prompt_key: prompt
+        calculate_mean_activation_values.template_words:
+        - word: The
+          position:
+          - 0
+        - word: ' city'
+          position:
+          - 1
+          - 13
+        - word: ' of'
+          position:
+          - 2
+          - 9
+          - 14
+          - 21
+        - word: ' is'
+          position:
+          - 4
+          - 16
+        - word: ' located'
+          position:
+          - 5
+          - 17
+        - word: ' in'
+          position:
+          - 6
+          - 18
+        - word: ' the'
+          position:
+          - 7
+          - 19
+        - word: ' country'
+          position:
+          - 8
+          - 20
+        - word: .
+          position:
+          - 11
+        - word: ' The'
+          position:
+          - 12
+        - word: city name
+          position:
+          - 3
+          - 15
+        - word: country name
+          position:
+          - 10
+    outs:
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_0.pkl
+      hash: md5
+      md5: 657cbf94408f699605516cf65d698dbb
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_1.pkl
+      hash: md5
+      md5: e15df2f49e46175eafec3f4c767d2d13
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_10.pkl
+      hash: md5
+      md5: 1e7c4f9a885d10f9888e27384250cf57
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_11.pkl
+      hash: md5
+      md5: 85e36b28d49d5f8665a98de723a6331d
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_12.pkl
+      hash: md5
+      md5: 1a42f547992ccd5cdf2d0c093d60ba52
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_13.pkl
+      hash: md5
+      md5: 92e3413e5cca1e3ea236d9d6c0608626
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_14.pkl
+      hash: md5
+      md5: 742c1b6954c9179502cb6d8e83199f2a
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_15.pkl
+      hash: md5
+      md5: 751327261f3bf5e13a57cb060f3f29e1
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_16.pkl
+      hash: md5
+      md5: 73d3f2eca0e4c03819c9e7029cb32b4b
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_17.pkl
+      hash: md5
+      md5: 375cec430c6d7d6282f3420189492e3d
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_18.pkl
+      hash: md5
+      md5: 9ab66ba4e9807ce6ca07836807977a78
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_19.pkl
+      hash: md5
+      md5: 7789cfb15d7936c28af793c77276212d
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_2.pkl
+      hash: md5
+      md5: f9e00176ac455d06dd7189fa8f847db8
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_20.pkl
+      hash: md5
+      md5: a424208b4061eb6eef090481304b61ed
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_21.pkl
+      hash: md5
+      md5: 4db8deb9027df2096d9bbf7f7b79ad3f
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_3.pkl
+      hash: md5
+      md5: 7cf39d2fd6eda157b4a8ef057f62d340
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_4.pkl
+      hash: md5
+      md5: e535b2ca9a0d12a5ffba40cc17142ecf
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_5.pkl
+      hash: md5
+      md5: 88f4b5841a0033c54e00371d4c24d2ac
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_6.pkl
+      hash: md5
+      md5: de931413161e0f2bc95407c6850fbb89
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_7.pkl
+      hash: md5
+      md5: cff62840c69e1e588c2f46642b764ec3
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_8.pkl
+      hash: md5
+      md5: f0b4107cfdea6605fc39e66dbc12e750
+      size: 37683
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_9.pkl
+      hash: md5
+      md5: 8e523730753753190c39e581dbd9c2c0
+      size: 37683

@@ -1,0 +1,2 @@
+attn_head_activation_patching_on_last_token:
+  prompt_key: 'fact_prompt'

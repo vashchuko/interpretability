@@ -1,0 +1,42 @@
+stages:
+  prepare_gpt2_small_transformer_lens:
+    cmd: python ..\\steps\\prepare_data_gpt2_small\\prepare_gpt2_small_transformer_lens.py ..\\data\\gpt2_small_transfromer_lens.pkl
+    deps:
+    - ..\\steps\\prepare_data_gpt2_small\\prepare_gpt2_small_transformer_lens.py
+    outs: 
+    - ..\\data\\gpt2_small_transfromer_lens.pkl
+
+  calculate_mean_attn_hook_v_activation_values:
+    cmd: python ..\\steps\\prepare_data_gpt2_small\\calculate_mean_attn_hook_v_activation_values.py ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\abc_examples_v4.json ..\data\mean_attn_hook_v_activation_values
+    deps:
+    - ..\\steps\\prepare_data_gpt2_small\\calculate_mean_attn_hook_v_activation_values.py
+    - ..\\data\\gpt2_small_transfromer_lens.pkl
+    - ..\\data\\abc_examples_v4.json
+    outs:
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_0.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_1.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_2.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_3.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_4.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_5.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_6.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_7.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_8.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_9.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_10.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_11.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_12.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_13.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_14.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_15.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_16.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_17.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_18.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_19.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_20.pkl
+    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_21.pkl
+    params:
+    - calculate_mean_activation_values.attn_keys_hook_v
+    - calculate_mean_activation_values.prompt_key
+    - calculate_mean_activation_values.template_words
+    
