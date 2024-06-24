@@ -11,7 +11,7 @@ stages:
     outs:
     - path: ..\\data\\gpt2_small_transfromer_lens.pkl
       hash: md5
-      md5: 3d3673e0d53ad990acf64cb00ceca351
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
       size: 666253970
   calculate_mean_attn_hook_v_activation_values:
     cmd: python 
@@ -24,13 +24,13 @@ stages:
       size: 26354
     - path: ..\\data\\gpt2_small_transfromer_lens.pkl
       hash: md5
-      md5: 3d3673e0d53ad990acf64cb00ceca351
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
       size: 666253970
     - path: 
         ..\\steps\\prepare_data_gpt2_small\\calculate_mean_attn_hook_v_activation_values.py
       hash: md5
-      md5: 6cd6427779ce69423a9fd3dc6f85a75a
-      size: 1100
+      md5: 55aa4bb6445badbe745bd67ed15c4886
+      size: 1143
     params:
       params.yaml:
         calculate_mean_activation_values.attn_keys_hook_v:

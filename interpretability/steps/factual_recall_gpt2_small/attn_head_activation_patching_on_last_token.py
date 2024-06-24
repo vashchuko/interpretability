@@ -35,13 +35,14 @@ prompt_key = params['attn_head_activation_patching_on_last_token']['prompt_key']
 
 for key in mean_attn_hook_v_activation_values.keys():
     mean_attn_hook_v_activation_values[key] = torch.from_numpy(mean_attn_hook_v_activation_values[key])
-
-patching_result = activation_patching_for_attention_heads(model, examples, prompt_key, \
+    
+with torch.no_grad():
+    patching_result = activation_patching_for_attention_heads(model, examples, prompt_key, \
                      get_fact_output, get_country_mentioned_in_context_for_fact_prompt, mean_attn_hook_v_activation_values, token_position=-1)
 
 for key in patching_result.keys():
     imshow(patching_result[key], os.path.join(output_folder, f"attn_heads_hook_v_activation_patching_last_token_target_{key}.html"),\
-        xaxis="Head", yaxis="Layer", title="Normalized Logit Difference After Patching Attnetion Head")
+        xaxis="Head", yaxis="Layer", title="Cumulative Impact on Logit Difference After Patching Attnetion Head")
 
     with open(os.path.join(output_folder, f"attn_heads_hook_v_activation_patching_last_token_target_{key}.pkl"), 'wb') as f:
         pickle.dump(patching_result[key], f)

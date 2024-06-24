@@ -13,7 +13,7 @@ stages:
       size: 56063
     - path: ..\\data\\gpt2_small_transfromer_lens.pkl
       hash: md5
-      md5: 3d3673e0d53ad990acf64cb00ceca351
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
       size: 666253970
     - path: 
         ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_21.pkl
@@ -23,8 +23,8 @@ stages:
     - path: 
         ..\\steps\\factual_recall_gpt2_small\\attn_head_activation_patching_on_last_token.py
       hash: md5
-      md5: d2c882c5c77fc98e49699ff55a22626a
-      size: 1795
+      md5: a7aa47e7f1e2324cf4d65b63bb5ec3b5
+      size: 1835
     params:
       params.yaml:
         attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
@@ -32,30 +32,88 @@ stages:
     - path: 
         data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_first_token_logit.html
       hash: md5
-      md5: f7fc24a472aabfe1469cd97ac0c2180d
-      size: 3644149
+      md5: 6f41dadfbdc5ab8467b26b67c195af5f
+      size: 3644159
     - path: 
         data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_first_token_logit.pkl
       hash: md5
-      md5: 3db183e400e4d2fd6f2a257a54f58e6d
+      md5: 192877fe09811726401bd7309e13605b
       size: 1552
     - path: 
         data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_logit_diff.html
       hash: md5
-      md5: e5d9c21475434ab08a0aac5af4ac6432
-      size: 3643947
+      md5: 28c266c079efac222bffebeddcd34c0a
+      size: 3643957
     - path: 
         data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_logit_diff.pkl
       hash: md5
-      md5: 7d0dd396e9f82e04a3b358cfa3110d40
+      md5: fdb4d3ee314b415fa70351dbbebca89c
       size: 1552
     - path: 
         data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_second_token_logit.html
       hash: md5
-      md5: 34668db1022be6835bde883271d5f92a
-      size: 3644129
+      md5: 3339ac71d69e3fd402aaacbec550210b
+      size: 3644139
     - path: 
         data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_second_token_logit.pkl
       hash: md5
-      md5: b07db3af9881f189e2b477ddfd7aa045
+      md5: 3f5198c2f0d44a468cef46bfd09a53b9
       size: 1552
+  attn_head_path_patching_step1:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step1.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json 
+      ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_21.pkl
+      data\attn_head_path_patching_on_last_token
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_21.pkl
+      hash: md5
+      md5: 4db8deb9027df2096d9bbf7f7b79ad3f
+      size: 37683
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: b23338eb992e8a7bc01d7c69cc73cae5
+      size: 11006
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step1.py
+      hash: md5
+      md5: a6bc046a0a850b93c6897110a0ff90e2
+      size: 2281
+    outs:
+    - path: 
+        data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_base_token_logit_L6H6.html
+      hash: md5
+      md5: 7f74100e47f1d0067852c4dfa470bd26
+      size: 3642834
+    - path: 
+        data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_base_token_logit_L6H6.pkl
+      hash: md5
+      md5: 1797e5d81b877554ff1747debcfd6ec7
+      size: 4493
+    - path: 
+        data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_expected_token_logit_L6H6.html
+      hash: md5
+      md5: 58882693754196b88a0ebdd1db9ead50
+      size: 3642864
+    - path: 
+        data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_expected_token_logit_L6H6.pkl
+      hash: md5
+      md5: 1797e5d81b877554ff1747debcfd6ec7
+      size: 4493
+    - path: 
+        data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_logit_diff_L6H6.html
+      hash: md5
+      md5: 0176902f74ee24648c4cf350c8134c8d
+      size: 3642810
+    - path: 
+        data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_logit_diff_L6H6.pkl
+      hash: md5
+      md5: 1797e5d81b877554ff1747debcfd6ec7
+      size: 4493
