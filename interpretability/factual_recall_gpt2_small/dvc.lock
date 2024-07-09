@@ -1,0 +1,3952 @@
+schema: '2.0'
+stages:
+  attn_head_activation_patching_on_last_token:
+    cmd: python 
+      ..\\steps\\factual_recall_gpt2_small\\attn_head_activation_patching_on_last_token.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json 
+      ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_21.pkl
+      data\attn_head_activation_patching_on_last_token
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_21.pkl
+      hash: md5
+      md5: 4db8deb9027df2096d9bbf7f7b79ad3f
+      size: 37683
+    - path: ..\\src\\activation_patching.py
+      hash: md5
+      md5: b7a6ccf6e15c5e219f0f33cb3982a292
+      size: 3618
+    - path: 
+        ..\\steps\\factual_recall_gpt2_small\\attn_head_activation_patching_on_last_token.py
+      hash: md5
+      md5: 5ede140e43445522537506bfcb438a53
+      size: 1887
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+    outs:
+    - path: 
+        data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_first_token_logit.html
+      hash: md5
+      md5: ae453488dcae31c680f0848dda2865f7
+      size: 3644201
+    - path: 
+        data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_first_token_logit.pkl
+      hash: md5
+      md5: d915e6c93db5140d8517f0e7c4d7d620
+      size: 1552
+    - path: 
+        data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_logit_diff.html
+      hash: md5
+      md5: 86d65deedd674fbefefdb6f918dee92f
+      size: 3644211
+    - path: 
+        data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_logit_diff.pkl
+      hash: md5
+      md5: 602d3833c09bb6d9f9daf2279aceb0b1
+      size: 1552
+    - path: 
+        data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_second_token_logit.html
+      hash: md5
+      md5: ad7bffd34467719d955de87d0b867d15
+      size: 3644178
+    - path: 
+        data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_second_token_logit.pkl
+      hash: md5
+      md5: eaa55021d38aa6c60e9af7dd9b932c1f
+      size: 1552
+  attn_head_path_patching_step1:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step1.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json 
+      ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_21.pkl
+      data\attn_head_path_patching_on_last_token
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: 
+        ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_21.pkl
+      hash: md5
+      md5: 4db8deb9027df2096d9bbf7f7b79ad3f
+      size: 37683
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: b23338eb992e8a7bc01d7c69cc73cae5
+      size: 11006
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step1.py
+      hash: md5
+      md5: a6bc046a0a850b93c6897110a0ff90e2
+      size: 2281
+    outs:
+    - path: 
+        data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_base_token_logit_L6H6.html
+      hash: md5
+      md5: 7f74100e47f1d0067852c4dfa470bd26
+      size: 3642834
+    - path: 
+        data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_base_token_logit_L6H6.pkl
+      hash: md5
+      md5: 1797e5d81b877554ff1747debcfd6ec7
+      size: 4493
+    - path: 
+        data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_expected_token_logit_L6H6.html
+      hash: md5
+      md5: 58882693754196b88a0ebdd1db9ead50
+      size: 3642864
+    - path: 
+        data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_expected_token_logit_L6H6.pkl
+      hash: md5
+      md5: 1797e5d81b877554ff1747debcfd6ec7
+      size: 4493
+    - path: 
+        data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_logit_diff_L6H6.html
+      hash: md5
+      md5: 0176902f74ee24648c4cf350c8134c8d
+      size: 3642810
+    - path: 
+        data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_logit_diff_L6H6.pkl
+      hash: md5
+      md5: 1797e5d81b877554ff1747debcfd6ec7
+      size: 4493
+  attn_head_path_patching_step1@0:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-0 0 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-0
+      hash: md5
+      md5: 24ce54f2febc138070d31a936c5c77e1.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@1:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-1 1 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-1
+      hash: md5
+      md5: 02101e3082ed283ab7e9dd0c374d47e2.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@2:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-2 2 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-2
+      hash: md5
+      md5: aa74bfad969864f3eb3eb48c218934e4.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@3:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-3 3 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-3
+      hash: md5
+      md5: 4dcbd7bf48c27382ac4329ee7c13655c.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@4:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-4 4 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-4
+      hash: md5
+      md5: ff86a47143784b4bc1a3f0f359639dc2.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@5:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-5 5 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-5
+      hash: md5
+      md5: 8a0ee5f6e27c4bab74e573d13c2c02aa.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@6:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-6 6 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-6
+      hash: md5
+      md5: 90309f0339f9466bcb30a1bf8a39c154.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@7:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-7 7 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-7
+      hash: md5
+      md5: 21cc7ef95af428e63097430ae40a8f3a.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@8:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-8 8 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-8
+      hash: md5
+      md5: 66e5524a490eaf7caab2b9f34722e06c.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@9:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-9 9 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-9
+      hash: md5
+      md5: 5fa1a26a9904b6ba4b0dcc3682752322.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@10:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-10 10 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-10
+      hash: md5
+      md5: 00b3a20d86a80121054aa586e9e1b786.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@11:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-11 11 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-11
+      hash: md5
+      md5: bae98a93f74d9d2b6619188e5b46669f.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@12:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-12 12 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-12
+      hash: md5
+      md5: a7c7fc9520c644622db82add6cce476e.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@13:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-13 13 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-13
+      hash: md5
+      md5: 52674696b91ec0022585bbba3fa6d33e.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@14:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-14 14 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-14
+      hash: md5
+      md5: f69b8d649c78be9fc65e9da2b5060fe5.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@15:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-15 15 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-15
+      hash: md5
+      md5: 27b48afdd00eb099b1f8b8eff03963af.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@16:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-16 16 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-16
+      hash: md5
+      md5: 29a3b78b322c905fc086e3ebb2645a24.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@17:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-17 17 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-17
+      hash: md5
+      md5: f29923cce124824e9dbbf3eacc8a087c.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@18:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-18 18 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-18
+      hash: md5
+      md5: f6d1e33377ac4e9376f302e92d87a061.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@19:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-19 19 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-19
+      hash: md5
+      md5: 98dd91493948813dc74ab47337374795.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@20:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-20 20 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-20
+      hash: md5
+      md5: c3de4b922f2e0dbdabd495445d13b4a7.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@21:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-21 21 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-21
+      hash: md5
+      md5: 456811b5eeaae8040659c32bbaf79148.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@22:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-22 22 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-22
+      hash: md5
+      md5: 5f8fb9d729355e41e5889a5246e83b1f.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@23:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-23 23 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-23
+      hash: md5
+      md5: 5b8261f9e736a0334495a9e356fa4144.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@24:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-24 24 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-24
+      hash: md5
+      md5: a02c47d5534626418a06b4468478df28.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@25:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-25 25 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-25
+      hash: md5
+      md5: 84330ceac7e3ffa9f4ed950bdb48a173.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@26:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-26 26 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-26
+      hash: md5
+      md5: 851d92365c5974aa5f2858e4fc75eff1.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@27:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-27 27 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-27
+      hash: md5
+      md5: 8345a08b2801e0384dcffe1346c2bc24.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@28:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-28 28 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-28
+      hash: md5
+      md5: ea1f2d0336c89b9b55c09cedd2382cfd.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@29:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-29 29 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-29
+      hash: md5
+      md5: 003f64bb613f0228048e7ab9d180b0ff.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@30:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-30 30 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-30
+      hash: md5
+      md5: 13cae0ad9bb18f8aa999cb89ce8db62e.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@31:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-31 31 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-31
+      hash: md5
+      md5: 7ff12d41c58f696c8d0d60f19d146e05.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@32:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-32 32 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-32
+      hash: md5
+      md5: 58d009b9cc186827734d180dc4308e03.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@33:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-33 33 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-33
+      hash: md5
+      md5: 2782879963e32cf7247fe4087070c44e.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@34:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-34 34 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-34
+      hash: md5
+      md5: 9779e343f3f293563eccb333dd4c1628.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@35:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-35 35 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-35
+      hash: md5
+      md5: ad8c82f8991a0cf7d7c823d8e4351846.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@36:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-36 36 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-36
+      hash: md5
+      md5: 94389a24f36127944f942c3d98c91702.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@37:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-37 37 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-37
+      hash: md5
+      md5: 3d94b3cf3cfe944203be729583302c64.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@38:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-38 38 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-38
+      hash: md5
+      md5: 457f425565569fb467a3dc0b9fce3a4a.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@39:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-39 39 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-39
+      hash: md5
+      md5: 89791d4c495fbedcdad02f0b26c7d5e1.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@40:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-40 40 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-40
+      hash: md5
+      md5: 3dc8e4025a33407a17ee1a5ca54cf0f8.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@41:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-41 41 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-41
+      hash: md5
+      md5: 0ddd2934edbab4c312c6eda3cde34469.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@42:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-42 42 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-42
+      hash: md5
+      md5: 7a32275114b37b0cfa96412888ebaf1a.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@43:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-43 43 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-43
+      hash: md5
+      md5: e61b02d7397d6483a0d930d436bed3ef.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@44:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-44 44 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-44
+      hash: md5
+      md5: 3777d219fa67b4c2c368de491ef6e4f9.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@45:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-45 45 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-45
+      hash: md5
+      md5: 261cbb30dd0dbd15d5b49236214a8320.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@46:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-46 46 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-46
+      hash: md5
+      md5: 4ac438c9317a1e4584cbdb5fcbae53cb.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@47:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-47 47 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-47
+      hash: md5
+      md5: 198790ee8aa71418fb5312bcf42d6ed7.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@48:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-48 48 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-48
+      hash: md5
+      md5: fd1339c9b378bdd9f1c8630b6cbd5a60.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@49:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-49 49 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-49
+      hash: md5
+      md5: 35ebf3d00f9249303e2ed259e82211c8.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@50:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-50 50 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-50
+      hash: md5
+      md5: 26fcba290937e46e4c7029753170c4bd.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@51:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-51 51 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-51
+      hash: md5
+      md5: 2e423e7dd197f981c94f1d569d0ef93c.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@52:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-52 52 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-52
+      hash: md5
+      md5: dbfe23b50ed8dbbee73c7cc6ab5deeb0.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@53:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-53 53 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-53
+      hash: md5
+      md5: a7a8f0b781fc6edb462d05841f9cef54.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@54:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-54 54 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-54
+      hash: md5
+      md5: 5815ec49f50ea8ac35b5259985066db7.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@55:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-55 55 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-55
+      hash: md5
+      md5: e4dfde4f2eccf8c5344a0a5abf14fc47.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@56:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-56 56 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-56
+      hash: md5
+      md5: aedc1256ae74ffc9839c53688e1de4be.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@57:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-57 57 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-57
+      hash: md5
+      md5: 60f75ed044f186f817fd372c231eedb1.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@58:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-58 58 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-58
+      hash: md5
+      md5: 728e6f8834f1514b924d905829f88732.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@59:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-59 59 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-59
+      hash: md5
+      md5: f19689f43c83f5104a99323ff7fa7691.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@60:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-60 60 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-60
+      hash: md5
+      md5: f773ecc2eb07dcded196a9bf611e7575.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@61:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-61 61 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-61
+      hash: md5
+      md5: 39dc91c97573ecbb1e6a59d38637f7c2.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@62:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-62 62 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-62
+      hash: md5
+      md5: ee26df63f2fb045ac6d65b8b40793855.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@63:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-63 63 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-63
+      hash: md5
+      md5: 5f3f201300f7b8ad97b664630a8709f2.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@64:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-64 64 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-64
+      hash: md5
+      md5: c57b686c4da09d54c8aec40e791aeb50.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@65:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-65 65 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-65
+      hash: md5
+      md5: 594fee7d202304dcb9f99b9578ef177e.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@66:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-66 66 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-66
+      hash: md5
+      md5: 5a66e39c7528682c38da574234ec0fbe.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@67:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-67 67 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-67
+      hash: md5
+      md5: 451c16fe68e62fee61477f778408e57b.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@68:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-68 68 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-68
+      hash: md5
+      md5: d7ab34f4a6610d744dec632a4035918d.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@69:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-69 69 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-69
+      hash: md5
+      md5: 058a3e2c092eedca6c4026e239b952b9.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@70:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-70 70 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-70
+      hash: md5
+      md5: 8faf0e553d7f2f3d60eca4955faa011f.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@71:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-71 71 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-71
+      hash: md5
+      md5: 5a6446389a93f49607337d0e2d867164.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@72:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-72 72 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-72
+      hash: md5
+      md5: 53442d8e2099dcc6ec8efc1da535da6e.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@73:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-73 73 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-73
+      hash: md5
+      md5: b6b09df6470e570c9673e55d6e6aee17.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@74:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-74 74 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-74
+      hash: md5
+      md5: da11a06cca8ccdd7e54b797cc4b13973.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@75:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-75 75 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-75
+      hash: md5
+      md5: af2478ff8623139e0a7ac593b95dba10.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@76:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-76 76 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-76
+      hash: md5
+      md5: 8d4b984dad2f0aba6bfd0160f39004a4.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@77:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-77 77 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-77
+      hash: md5
+      md5: 84966f0b7e1a63099113ed5da34c8ae7.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@78:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-78 78 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-78
+      hash: md5
+      md5: 08b5412ed9f194b9dc7a952aa8063813.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@79:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-79 79 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-79
+      hash: md5
+      md5: 2069374e6d8dd6fe612c3c7628e19be4.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@80:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-80 80 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-80
+      hash: md5
+      md5: 013cf3e2abad12087b7b176a07c903c6.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@81:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-81 81 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-81
+      hash: md5
+      md5: 5605cbc8ded911a10c2855fd7be9b92e.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@82:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-82 82 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-82
+      hash: md5
+      md5: 9e10e94227e27da0f286c53f912402ed.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@83:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-83 83 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-83
+      hash: md5
+      md5: 6aed1ddd364581ee2dac023b1f3381e3.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@84:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-84 84 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-84
+      hash: md5
+      md5: b981af22f92edac7a9d76d4639ba8329.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@85:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-85 85 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-85
+      hash: md5
+      md5: f1a03a7c1d5d3f29574f5c3e52f2f73d.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@86:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-86 86 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-86
+      hash: md5
+      md5: 775c3e03c20879781c3b672b8d92940e.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@87:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-87 87 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-87
+      hash: md5
+      md5: f3cb86b58dbd5d4b427ff45d51f23185.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@88:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-88 88 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-88
+      hash: md5
+      md5: fdad032d839a9befc0441efd74931c1d.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@89:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-89 89 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-89
+      hash: md5
+      md5: 7e3ea2c75d730de059a57cd37a8545e2.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@90:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-90 90 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-90
+      hash: md5
+      md5: 6c523485bb2c517621f3683f6d5d85b3.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@91:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-91 91 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-91
+      hash: md5
+      md5: 9f6565584410de2fe7a5f86e5132b728.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@92:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-92 92 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-92
+      hash: md5
+      md5: 6a4d8a4b896026cd4436f5530393cba5.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@93:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-93 93 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-93
+      hash: md5
+      md5: 6bb180d09b1bf9323059d62bfe6dcf3f.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@94:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-94 94 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-94
+      hash: md5
+      md5: cdfac3c67f203212c3e16fa28ae0b87d.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@95:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-95 95 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-95
+      hash: md5
+      md5: 4233733e5b42a5008b734d49234c946f.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@96:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-96 96 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-96
+      hash: md5
+      md5: be6c0fcb595d17e40dd2c0d9347598df.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@97:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-97 97 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-97
+      hash: md5
+      md5: d62fcb4a6f4f031fc967c6ff2c28da6d.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@98:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-98 98 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-98
+      hash: md5
+      md5: 9538b0c2f4623c5dbc7e8a6a673144f6.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_step1@99:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values
+      data\attn_head_path_patching_step1\example-99 99 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\examples_v4.json
+      hash: md5
+      md5: e09074b1d45d218ef4d1c69c894d1ee9
+      size: 56063
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\data\\mean_attn_hook_v_activation_values
+      hash: md5
+      md5: a6d6448e6c742151a86e840ba01ed1be.dir
+      size: 830350
+      nfiles: 23
+    - path: ..\\src\\path_patching.py
+      hash: md5
+      md5: 30e11485b6846563a26015f8d4dacc04
+      size: 10881
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      hash: md5
+      md5: ae71e861030d621a96ff6e6bd3974cb4
+      size: 2737
+    params:
+      params.yaml:
+        attn_head_activation_patching_on_last_token.prompt_key: fact_prompt
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_step1\\example-99
+      hash: md5
+      md5: 3945d6254fc47c66f73304cce1c15fbc.dir
+      size: 102432
+      nfiles: 66
+  attn_head_path_patching_aggregate_step1:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_aggregate.py
+      ..\\data\\gpt2_small_transfromer_lens.pkl data\\attn_head_path_patching_step1
+      data\\attn_head_path_patching_aggregate_step1 attn_head_path_patching_step1
+    deps:
+    - path: ..\\data\\gpt2_small_transfromer_lens.pkl
+      hash: md5
+      md5: cc2bd45eccc80f8b4b4c2a2c8cbbaed3
+      size: 666253970
+    - path: ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_aggregate.py
+      hash: md5
+      md5: 256b19d768f041176876d01f4a5781b9
+      size: 3157
+    - path: data\\attn_head_path_patching_step1
+      hash: md5
+      md5: 60da8e0c08d8d65bd2cfdcd946845b96.dir
+      size: 10243746
+      nfiles: 6601
+    params:
+      params.yaml:
+        attn_head_path_patching_step1.target_head: 6
+        attn_head_path_patching_step1.target_layer: 6
+        attn_head_path_patching_step1.target_token_position: 21
+    outs:
+    - path: data\\attn_head_path_patching_aggregate_step1
+      hash: md5
+      md5: 0b964e6bd54564522fdee7f308e33f4f.dir
+      size: 240526914
+      nfiles: 132

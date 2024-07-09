@@ -1,0 +1,5 @@
+outs:
+- md5: 3e5e07a2e2d7398644df7074c90934a4
+  size: 5066780
+  hash: md5
+  path: worldcities.csv

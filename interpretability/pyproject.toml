@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "interpretability"
+version = "0.1.0"
+description = ""
+authors = ["oleksandr.vashchuk"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+dulwich = "0.21.6"
+dvc = "3.49.0"
+transformer-lens = "^2.0.0"
+circuitsvis = "^1.43.2"
+plotly = "^5.22.0"
+kaleido = "0.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
