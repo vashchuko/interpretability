@@ -6,6 +6,7 @@ stages:
     - ..\\data\\examples_v4.json
     - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_21.pkl
     - ..\\steps\\factual_recall_gpt2_small\\attn_head_activation_patching_on_last_token.py
+    - ..\\src\\activation_patching.py
     outs:
     - data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_logit_diff.pkl
     - data\\attn_head_activation_patching_on_last_token\\attn_heads_hook_v_activation_patching_last_token_target_logit_diff.html
@@ -17,17 +18,32 @@ stages:
     - attn_head_activation_patching_on_last_token.prompt_key
 
   attn_head_path_patching_step1:
-    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step1.py ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_21.pkl data\attn_head_path_patching_on_last_token
+    foreach: ${example_ids}
+    do:
+      cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py ..\\data\\gpt2_small_transfromer_lens.pkl ..\\data\\examples_v4.json ..\\data\\mean_attn_hook_v_activation_values data\attn_head_path_patching_step1\example-${item} ${item} attn_head_path_patching_step1
+      deps:
+      - ..\\data\\gpt2_small_transfromer_lens.pkl
+      - ..\\data\\examples_v4.json
+      - ..\\data\\mean_attn_hook_v_activation_values
+      - ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step.py
+      - ..\\src\\path_patching.py
+      outs:
+      - data\\attn_head_path_patching_step1\\example-${item}
+      params:
+      - attn_head_activation_patching_on_last_token.prompt_key
+      - attn_head_path_patching_step1.target_layer
+      - attn_head_path_patching_step1.target_head
+      - attn_head_path_patching_step1.target_token_position
+
+  attn_head_path_patching_aggregate_step1:
+    cmd: python ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_aggregate.py ..\\data\\gpt2_small_transfromer_lens.pkl data\\attn_head_path_patching_step1 data\\attn_head_path_patching_aggregate_step1 attn_head_path_patching_step1
     deps:
     - ..\\data\\gpt2_small_transfromer_lens.pkl
-    - ..\\data\\examples_v4.json
-    - ..\\data\\mean_attn_hook_v_activation_values\\mean_attn_hook_v_activation_values_word_position_21.pkl
-    - ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_step1.py
-    - ..\\src\\path_patching.py
+    - ..\\steps\\factual_recall_gpt2_small\\attn_head_path_patching_aggregate.py
+    - data\\attn_head_path_patching_step1
     outs:
-    - data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_logit_diff_L6H6.pkl
-    - data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_logit_diff_L6H6.html
-    - data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_expected_token_logit_L6H6.pkl
-    - data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_expected_token_logit_L6H6.html
-    - data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_base_token_logit_L6H6.pkl
-    - data\\attn_head_path_patching_on_last_token\\attn_heads_hook_v_path_patching_last_token_target_base_token_logit_L6H6.html
+    - data\\attn_head_path_patching_aggregate_step1
+    params:
+    - attn_head_path_patching_step1.target_token_position
+    - attn_head_path_patching_step1.target_layer
+    - attn_head_path_patching_step1.target_head

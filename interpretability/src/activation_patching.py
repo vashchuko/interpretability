@@ -57,4 +57,6 @@ def activation_patching_for_attention_heads(model,
                 if not math.isnan(1.0 - patched_second_token_logit/second_token_logit):
                     patching_result['second_token_logit'][layer, head] += (1.0 - patched_second_token_logit/second_token_logit)
 
+    for key in patching_result.keys():
+        patching_result[key] /= len(examples)
     return patching_result

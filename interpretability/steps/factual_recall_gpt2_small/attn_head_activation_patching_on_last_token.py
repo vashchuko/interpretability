@@ -30,7 +30,7 @@ with open(examples_file, 'r') as f:
 with open(mean_attn_hook_v_activation_values_file, 'rb') as f:
     mean_attn_hook_v_activation_values = pickle.load(f)
 
-params = dvc.api.params_show()
+params = dvc.api.params_show(stages='attn_head_activation_patching_on_last_token')
 prompt_key = params['attn_head_activation_patching_on_last_token']['prompt_key']
 
 for key in mean_attn_hook_v_activation_values.keys():
